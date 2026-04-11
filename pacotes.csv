@@ -1,0 +1,141 @@
+####################################
+#       __    ______  ______       #
+#      |  |  |  ____||  ____|      #
+#      |  |  | | __  | | __        #
+#      |  |__| ||_ | | ||_ |       #
+#      |_____|\____| |_____|       #
+# -------------------------------- #
+#   >> https://lucianogg.info      #
+####################################
+#     Script p/ LFS Project        #
+####################################
+
+# HEADER: fase_instalacao,id_receita,nome_pacote,versao_pacote,arquivo_tarball,url_fonte
+
+# ==============================================================================
+# FASE 0: Patches (Apenas Download, ignorados no motor de construção)
+# ==============================================================================
+0,patch_bzip2,patch_bzip2,1.0.8,bzip2-1.0.8-install_docs-1.patch,https://www.linuxfromscratch.org/patches/lfs/12.3/bzip2-1.0.8-install_docs-1.patch
+0,patch_coreutils,patch_coreutils,9.6,coreutils-9.6-i18n-1.patch,https://www.linuxfromscratch.org/patches/lfs/12.3/coreutils-9.6-i18n-1.patch
+0,patch_expect,patch_expect,5.45.4,expect-5.45.4-gcc14-1.patch,https://www.linuxfromscratch.org/patches/lfs/12.3/expect-5.45.4-gcc14-1.patch
+0,patch_glibc,patch_glibc,2.41,glibc-2.41-fhs-1.patch,https://www.linuxfromscratch.org/patches/lfs/12.3/glibc-2.41-fhs-1.patch
+0,patch_kbd,patch_kbd,2.7.1,kbd-2.7.1-backspace-1.patch,https://www.linuxfromscratch.org/patches/lfs/12.3/kbd-2.7.1-backspace-1.patch
+
+# ==============================================================================
+# FASE 1: Ferramentas Cruzadas e Temporárias (Capítulos 5 e 6)
+# ==============================================================================
+1,binutils_pass1,binutils,2.44,binutils-2.44.tar.xz,https://sourceware.org/pub/binutils/releases/binutils-2.44.tar.xz
+1,gcc_pass1,gcc,14.2.0,gcc-14.2.0.tar.xz,https://toolchains.bootlin.com/downloads/releases/sources/gcc-final-14.2.0/gcc-14.2.0.tar.xz
+1,linux_headers,linux,6.13.4,linux-6.13.4.tar.xz,https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.13.4.tar.xz
+1,glibc,glibc,2.41,glibc-2.41.tar.gz,https://ftp.uni-erlangen.de/gnu/glibc/glibc-2.41.tar.gz
+1,libstdcpp_pass1,gcc,14.2.0,gcc-14.2.0.tar.xz,https://toolchains.bootlin.com/downloads/releases/sources/gcc-final-14.2.0/gcc-14.2.0.tar.xz
+1,m4_temp,m4,1.4.19,m4-1.4.19.tar.xz,https://ftp.uni-erlangen.de/gnu/m4/m4-1.4.19.tar.xz
+1,ncurses_temp,ncurses,6.5,ncurses-6.5.tar.gz,https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz
+1,bash_temp,bash,5.2.37,bash-5.2.37.tar.gz,https://ftp.uni-erlangen.de/gnu/bash/bash-5.2.37.tar.gz
+1,coreutils_temp,coreutils,9.6,coreutils-9.6.tar.xz,https://ftp.uni-erlangen.de/gnu/coreutils/coreutils-9.6.tar.xz
+1,diffutils_temp,diffutils,3.11,diffutils-3.11.tar.xz,https://ftp.uni-erlangen.de/gnu/diffutils/diffutils-3.11.tar.xz
+1,file_temp,file,5.46,file-5.46.tar.gz,https://astron.com/pub/file/file-5.46.tar.gz
+1,findutils_temp,findutils,4.10.0,findutils-4.10.0.tar.xz,https://ftp.uni-erlangen.de/gnu/findutils/findutils-4.10.0.tar.xz
+1,gawk_temp,gawk,5.3.1,gawk-5.3.1.tar.xz,https://ftp.uni-erlangen.de/gnu/gawk/gawk-5.3.1.tar.xz
+1,grep_temp,grep,3.11,grep-3.11.tar.xz,https://ftp.uni-erlangen.de/gnu/grep/grep-3.11.tar.xz
+1,gzip_temp,gzip,1.13,gzip-1.13.tar.xz,https://ftp.uni-erlangen.de/gnu/gzip/gzip-1.13.tar.xz
+1,make_temp,make,4.4.1,make-4.4.1.tar.gz,https://ftp.uni-erlangen.de/gnu/make/make-4.4.1.tar.gz
+1,patch_temp,patch,2.7.6,patch-2.7.6.tar.xz,https://ftp.uni-erlangen.de/gnu/patch/patch-2.7.6.tar.xz
+1,sed_temp,sed,4.9,sed-4.9.tar.xz,https://ftp.uni-erlangen.de/gnu/sed/sed-4.9.tar.xz
+1,tar_temp,tar,1.35,tar-1.35.tar.xz,https://ftp.uni-erlangen.de/gnu/tar/tar-1.35.tar.xz
+1,xz_temp,xz,5.6.1,xz-5.6.1.tar.gz,http://download.openpkg.org/components/cache/xz/xz-5.6.1.tar.gz
+1,binutils_pass2,binutils,2.44,binutils-2.44.tar.xz,https://sourceware.org/pub/binutils/releases/binutils-2.44.tar.xz
+1,gcc_pass2,gcc,14.2.0,gcc-14.2.0.tar.xz,https://toolchains.bootlin.com/downloads/releases/sources/gcc-final-14.2.0/gcc-14.2.0.tar.xz
+
+# ==============================================================================
+# FASE 2: Sistema Final (Capítulos 7 e 8)
+# ==============================================================================
+2,gettext_temp,gettext,0.24.1,gettext-0.24.1.tar.gz,https://ftp.uni-erlangen.de/gnu/gettext/gettext-0.24.1.tar.gz
+2,bison_temp,bison,3.8.2,bison-3.8.2.tar.xz,https://ftp.uni-erlangen.de/gnu/bison/bison-3.8.2.tar.xz
+2,perl_temp,perl,5.40.1,perl-5.40.1.tar.xz,https://www.cpan.org/src/5.0/perl-5.40.1.tar.xz
+2,python_temp,Python,3.13.2,Python-3.13.2.tar.xz,https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tar.xz
+2,texinfo_temp,texinfo,7.1,texinfo-7.1.tar.gz,https://ftp.uni-erlangen.de/gnu/texinfo/texinfo-7.1.tar.gz
+2,utillinux_temp,util-linux,2.40.4,util-linux-2.40.4.tar.xz,https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz
+2,manpages,man-pages,6.12,man-pages-6.12.tar.xz,https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.12.tar.xz
+2,ianaetc,iana-etc,20250123,iana-etc-20250123.tar.gz,https://github.com/Mic92/iana-etc/releases/download/20250123/iana-etc-20250123.tar.gz
+2,glibc_final,glibc,2.41,glibc-2.41.tar.gz,https://ftp.uni-erlangen.de/gnu/glibc/glibc-2.41.tar.gz
+2,zlib,zlib,1.3,zlib-1.3.tar.xz,https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.xz
+2,bzip2,bzip2,1.0.8,bzip2-1.0.8.tar.gz,https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+2,xz_final,xz,5.6.1,xz-5.6.1.tar.gz,http://download.openpkg.org/components/cache/xz/xz-5.6.1.tar.gz
+2,zstd,zstd,1.5.5,zstd-1.5.5.tar.gz,https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz
+2,lz4,lz4,1.10.0,lz4-1.10.0.tar.gz,https://github.com/lz4/lz4/releases/download/v1.10.0/lz4-1.10.0.tar.gz
+2,libxcrypt,libxcrypt,4.4.38,libxcrypt-4.4.38.tar.xz,https://github.com/besser82/libxcrypt/releases/download/v4.4.38/libxcrypt-4.4.38.tar.xz
+2,file_final,file,5.46,file-5.46.tar.gz,https://astron.com/pub/file/file-5.46.tar.gz
+2,readline,readline,8.2.13,readline-8.2.13.tar.gz,https://ftp.uni-erlangen.de/gnu/readline/readline-8.2.13.tar.gz
+2,m4_final,m4,1.4.19,m4-1.4.19.tar.xz,https://ftp.uni-erlangen.de/gnu/m4/m4-1.4.19.tar.xz
+2,bc,bc,7.0.3,bc-7.0.3.tar.xz,https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-7.0.3.tar.xz
+2,flex,flex,2.6.4,flex-2.6.4.tar.gz,https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz
+2,tcl,tcl,8.6.16,tcl8.6.16-src.tar.gz,https://netix.dl.sourceforge.net/project/tcl/Tcl/8.6.16/tcl8.6.16-src.tar.gz
+2,expect,expect,5.45.4,expect5.45.4.tar.gz,https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz
+2,dejagnu,dejagnu,1.6.3-rc5,dejagnu-1.6.3-rc5.tar.gz,https://mirror.ihost.md/gnu-alpha/dejagnu/dejagnu-1.6.3-rc5.tar.gz
+2,binutils_final,binutils,2.44,binutils-2.44.tar.xz,https://sourceware.org/pub/binutils/releases/binutils-2.44.tar.xz
+2,gmp,gmp,6.3.0,gmp-6.3.0.tar.xz,https://ftp.uni-erlangen.de/gnu/gmp/gmp-6.3.0.tar.xz
+2,mpfr,mpfr,4.2.1,mpfr-4.2.1.tar.xz,https://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz
+2,mpc,mpc,1.3.1,mpc-1.3.1.tar.gz,https://ftp.uni-erlangen.de/gnu/mpc/mpc-1.3.1.tar.gz
+2,attr,attr,2.5.2,attr-2.5.2.tar.gz,https://download.savannah.gnu.org/releases/attr/attr-2.5.2.tar.gz
+2,acl,acl,2.3.2,acl-2.3.2.tar.xz,https://download.savannah.gnu.org/releases/acl/acl-2.3.2.tar.xz
+2,libcap,libcap,2.73,libcap-2.73.tar.xz,https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.73.tar.xz
+2,shadow,shadow,4.14.6,shadow-4.14.6.tar.gz,https://github.com/shadow-maint/shadow/releases/download/4.14.6/shadow-4.14.6.tar.gz
+2,gcc_final,gcc,14.2.0,gcc-14.2.0.tar.xz,https://toolchains.bootlin.com/downloads/releases/sources/gcc-final-14.2.0/gcc-14.2.0.tar.xz
+2,pkgconf,pkgconf,2.3.0,pkgconf-2.3.0.tar.xz,https://distfiles.ariadne.space/pkgconf/pkgconf-2.3.0.tar.xz
+2,ncurses_final,ncurses,6.5,ncurses-6.5.tar.gz,https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz
+2,sed_final,sed,4.9,sed-4.9.tar.xz,https://ftp.uni-erlangen.de/gnu/sed/sed-4.9.tar.xz
+2,psmisc,psmisc,23.7,psmisc-23.7.tar.xz,https://deac-fra.dl.sourceforge.net/project/psmisc/psmisc/psmisc-23.7.tar.xz
+2,gettext,gettext,0.24.1,gettext-0.24.1.tar.gz,https://ftp.uni-erlangen.de/gnu/gettext/gettext-0.24.1.tar.gz
+2,bison,bison,3.8.2,bison-3.8.2.tar.xz,https://ftp.uni-erlangen.de/gnu/bison/bison-3.8.2.tar.xz
+2,grep_final,grep,3.11,grep-3.11.tar.xz,https://ftp.uni-erlangen.de/gnu/grep/grep-3.11.tar.xz
+2,bash_final,bash,5.2.37,bash-5.2.37.tar.gz,https://ftp.uni-erlangen.de/gnu/bash/bash-5.2.37.tar.gz
+2,libtool,libtool,2.5.4,libtool-2.5.4.tar.xz,https://ftp.uni-erlangen.de/gnu/libtool/libtool-2.5.4.tar.xz
+2,gdbm,gdbm,1.24,gdbm-1.24.tar.gz,https://ftp.uni-erlangen.de/gnu/gdbm/gdbm-1.24.tar.gz
+2,gperf,gperf,3.1,gperf-3.1.tar.gz,https://ftp.uni-erlangen.de/gnu/gperf/gperf-3.1.tar.gz
+2,expat,expat,2.6.4,expat-2.6.4.tar.xz,https://github.com/libexpat/libexpat/releases/download/R_2_6_4/expat-2.6.4.tar.xz
+2,inetutils,inetutils,2.6,inetutils-2.6.tar.xz,https://ftp.uni-erlangen.de/gnu/inetutils/inetutils-2.6.tar.xz
+2,less,less,668,less-668.tar.gz,https://www.greenwoodsoftware.com/less/less-668.tar.gz
+2,perl,perl,5.40.1,perl-5.40.1.tar.xz,https://www.cpan.org/src/5.0/perl-5.40.1.tar.xz
+2,xmlparser,XML-Parser,2.47,XML-Parser-2.47.tar.gz,https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz
+2,intltool,intltool,0.51.0,intltool-0.51.0.tar.gz,https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
+2,autoconf,autoconf,2.72,autoconf-2.72.tar.xz,https://ftp.uni-erlangen.de/gnu/autoconf/autoconf-2.72.tar.xz
+2,automake,automake,1.17,automake-1.17.tar.xz,https://ftp.uni-erlangen.de/gnu/automake/automake-1.17.tar.xz
+2,openssl,openssl,3.4.1,openssl-3.4.1.tar.gz,https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz
+2,libelf,elfutils,0.192,elfutils-0.192.tar.bz2,https://sourceware.org/ftp/elfutils/0.192/elfutils-0.192.tar.bz2
+2,libffi,libffi,3.4.7,libffi-3.4.7.tar.gz,https://github.com/libffi/libffi/releases/download/v3.4.7/libffi-3.4.7.tar.gz
+2,python,Python,3.13.2,Python-3.13.2.tar.xz,https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tar.xz
+2,flitcore,flit_core,3.11.0,flit_core-3.11.0.tar.gz,https://pypi.org/packages/source/f/flit-core/flit_core-3.11.0.tar.gz
+2,wheel,wheel,0.45.1,wheel-0.45.1.tar.gz,https://pypi.org/packages/source/w/wheel/wheel-0.45.1.tar.gz
+2,setuptools,setuptools,75.8.1,setuptools-75.8.1.tar.gz,https://pypi.org/packages/source/s/setuptools/setuptools-75.8.1.tar.gz
+2,markupsafe,markupsafe,3.0.2,markupsafe-3.0.2.tar.gz,https://pypi.org/packages/source/M/MarkupSafe/markupsafe-3.0.2.tar.gz
+2,jinja2,jinja2,3.1.5,jinja2-3.1.5.tar.gz,https://pypi.org/packages/source/J/Jinja2/jinja2-3.1.5.tar.gz
+2,ninja,ninja,1.12.1,ninja-1.12.1.tar.gz,https://github.com/ninja-build/ninja/archive/v1.12.1/ninja-1.12.1.tar.gz
+2,meson,meson,1.7.0,meson-1.7.0.tar.gz,https://github.com/mesonbuild/meson/releases/download/1.7.0/meson-1.7.0.tar.gz
+2,kmod,kmod,34,kmod-34.tar.xz,https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.tar.xz
+2,coreutils_final,coreutils,9.6,coreutils-9.6.tar.xz,https://ftp.uni-erlangen.de/gnu/coreutils/coreutils-9.6.tar.xz
+2,check,check,0.15.2,check-0.15.2.tar.gz,https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz
+2,diffutils_final,diffutils,3.11,diffutils-3.11.tar.xz,https://ftp.uni-erlangen.de/gnu/diffutils/diffutils-3.11.tar.xz
+2,gawk_final,gawk,5.3.1,gawk-5.3.1.tar.xz,https://ftp.uni-erlangen.de/gnu/gawk/gawk-5.3.1.tar.xz
+2,findutils_final,findutils,4.10.0,findutils-4.10.0.tar.xz,https://ftp.uni-erlangen.de/gnu/findutils/findutils-4.10.0.tar.xz
+2,groff,groff,1.23.0,groff-1.23.0.tar.gz,https://ftp.uni-erlangen.de/gnu/groff/groff-1.23.0.tar.gz
+2,grub,grub,2.12,grub-2.12.tar.xz,https://ftp.uni-erlangen.de/gnu/grub/grub-2.12.tar.xz
+2,gzip_final,gzip,1.13,gzip-1.13.tar.xz,https://ftp.uni-erlangen.de/gnu/gzip/gzip-1.13.tar.xz
+2,iproute2,iproute2,6.13.0,iproute2-6.13.0.tar.xz,https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.13.0.tar.xz
+2,kbd,kbd,2.7.1,kbd-2.7.1.tar.xz,https://www.kernel.org/pub/linux/utils/kbd/kbd-2.7.1.tar.xz
+2,libpipeline,libpipeline,1.5.8,libpipeline-1.5.8.tar.gz,https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz
+2,mandb,man-db,2.13.0,man-db-2.13.0.tar.xz,https://download.savannah.nongnu.org/releases/man-db/man-db-2.13.0.tar.xz
+2,make_final,make,4.4.1,make-4.4.1.tar.gz,https://ftp.uni-erlangen.de/gnu/make/make-4.4.1.tar.gz
+2,patch_final,patch,2.7.6,patch-2.7.6.tar.xz,https://ftp.uni-erlangen.de/gnu/patch/patch-2.7.6.tar.xz
+2,tar_final,tar,1.35,tar-1.35.tar.xz,https://ftp.uni-erlangen.de/gnu/tar/tar-1.35.tar.xz
+2,texinfo,texinfo,7.1,texinfo-7.1.tar.gz,https://ftp.uni-erlangen.de/gnu/texinfo/texinfo-7.1.tar.gz
+2,vim,vim,9.1.1166,vim-9.1.1166.tar.gz,https://github.com/vim/vim/archive/v9.1.1166/vim-9.1.1166.tar.gz
+2,nano,nano,8.7,nano-8.7.tar.xz,https://www.nano-editor.org/dist/v8/nano-8.7.tar.xz
+2,utillinux,util-linux,2.40.4,util-linux-2.40.4.tar.xz,https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.4.tar.xz
+2,e2fsprogs,e2fsprogs,1.47.2,e2fsprogs-1.47.2.tar.gz,https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.2/e2fsprogs-1.47.2.tar.gz
+2,systemd,systemd,257.3,systemd-257.3.tar.gz,https://github.com/systemd/systemd/archive/v257.3/systemd-257.3.tar.gz
+2,dbus,dbus,1.16.0,dbus-1.16.0.tar.xz,https://dbus.freedesktop.org/releases/dbus/dbus-1.16.0.tar.xz
+2,procpsng,procps-ng,4.0.5,procps-ng-4.0.5.tar.xz,https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz
+
+#For Kernel Compilation
+2,linux_kernel,linux,6.13.4,linux-6.13.4.tar.xz,https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.13.4.tar.xz
