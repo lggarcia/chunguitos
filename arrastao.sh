@@ -117,10 +117,10 @@ fi
 ARQUIVO_1="lgg-lfsIZADOR.sh"
 ARQUIVO_2="post-lfsIZADOR.sh"
 
-echo "-----------------------------------------------------"
-echo "Starting download of LFS project scripts..."
-echo "Source: $URL_BASE"
-echo "-----------------------------------------------------"
+#echo "-----------------------------------------------------"
+#echo "Starting download of LFS project scripts..."
+#echo "Source: $URL_BASE"
+#echo "-----------------------------------------------------"
 
 #for file in "${FILES[@]}"; do
 #    echo ">> Downloading: $file"
