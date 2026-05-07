@@ -48,9 +48,12 @@ In case of failure on checking or installing tools, script will provide informat
 1. After `post-lfsIZADOR.sh` execution, gub entry for ChuntuitOS may not work with a *"KERNEL PANIC!"* message, but the fix is just set the correct partition on the new grub menu. New grub doesn't work with UUID for chunguitOS. (SOLVED - Uses PARTUUID now)
 2. After boot, several services, including network doesn't work.
 
-## Tested Platforms
+## ⚠️ Disclaimer & Testing
+
+While this assistant is built following DevOps best practices, it has **NOT** been exhaustively tested across all possible OS versions, hypervisors, and edge cases. 
+Because this tool performs critical system-level modifications (networking, firewall rules, SSH hardening, and package management), it is provided **"as is"**, without warranty of any kind. **Please use it at your own risk.**
+**Best Practice:** We strongly recommend testing the assistant on a virtual machine or a staging environment before running it on a live production server. 
+*Did you find a bug or successfully test it on a specific distro? Feel free to open an issue or submit a Pull Request!*
 
 Even though this script is distro-agnostid and should run on any x86-64 platform, it was tested on: 
 1. Debian Trixie on a Proxmox VM.
-
-
