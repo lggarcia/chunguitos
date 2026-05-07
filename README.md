@@ -51,7 +51,7 @@ In case of failure on checking or installing tools, script will provide informat
 ## ⚠️ Disclaimer & Testing
 
 While this assistant is built following DevOps best practices, it has **NOT** been exhaustively tested across all possible OS versions, hypervisors, and edge cases. 
-Because this tool performs critical system-level modifications (networking, firewall rules, SSH hardening, and package management), it is provided **"as is"**, without warranty of any kind. **Please use it at your own risk.**
+Because this tool performs critical system-level modifications, it is provided **"as is"**, without warranty of any kind. **Please use it at your own risk.**
 **Best Practice:** We strongly recommend testing the assistant on a virtual machine or a staging environment before running it on a live production server. 
 *Did you find a bug or successfully test it on a specific distro? Feel free to open an issue or submit a Pull Request!*
 
